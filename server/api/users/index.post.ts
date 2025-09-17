@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
     );
 
     // Verify the service role key is configured
-    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    if (!process.env.NUXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY) {
       throw createError({
         statusCode: 500,
         statusMessage: "Service role key not configured",
