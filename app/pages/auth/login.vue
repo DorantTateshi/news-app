@@ -6,7 +6,7 @@
       <div class="text-center mb-8">
         <NuxtLink to="/" class="inline-block">
           <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
-            News Blog
+            NewsHub
           </h1>
         </NuxtLink>
       </div>
