@@ -24,7 +24,6 @@ definePageMeta({
 });
 
 const handleSignupSuccess = () => {
-  // SignupForm handles navigation, this is just for any additional logic
   console.log("Signup successful");
 };
 </script>

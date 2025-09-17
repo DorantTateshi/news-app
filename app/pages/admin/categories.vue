@@ -194,7 +194,6 @@ const confirmDelete = async (category: Category) => {
   }
 };
 
-// Fetch categories on component mount
 onMounted(() => {
   fetchCategories();
 });

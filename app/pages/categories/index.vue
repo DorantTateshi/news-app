@@ -301,7 +301,7 @@ const getLatestArticleTime = (categoryId: string) => {
     return dateB - dateA
   })[0]
 
-  const dateObj = new Date(latest.created_at || 0)
+  const dateObj = new Date(latest?.created_at || 0)
   const now = new Date()
   const diffInHours = Math.floor((now.getTime() - dateObj.getTime()) / (1000 * 60 * 60))
 
@@ -324,7 +324,7 @@ const getLatestArticleDate = (categoryId: string) => {
     return dateB - dateA
   })[0]
 
-  return new Date(latest.created_at || 0).getTime()
+  return new Date(latest?.created_at || 0).getTime()
 }
 
 // Icon and color logic (same as homepage)

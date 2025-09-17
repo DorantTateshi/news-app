@@ -24,7 +24,6 @@ definePageMeta({
 });
 
 const handleLoginSuccess = () => {
-  // LoginForm handles navigation, this is just for any additional logic
   console.log("Login successful");
 };
 </script>
