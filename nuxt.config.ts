@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
   runtimeConfig: {
     supabase: {
-      serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+      serviceKey: process.env.NUXT_SUPABASE_SERVICE_ROLE_KEY,
     },
   },
   pages: true,

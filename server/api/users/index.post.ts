@@ -40,18 +40,20 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+    // Get runtime config
+    const config = useRuntimeConfig(event);
+
     // Create Supabase client with service role key for admin operations
     const client = createClient(
-      process.env.NUXT_PUBLIC_SUPABASE_URL!,
-      process.env.NUXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY! // Server-only key for admin operations
+      config.public.supabase.url,
+      config.supabase.serviceKey
     );
 
     // Verify the service role key is configured
-    if (!process.env.NUXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY) {
-      console.error("Environment variables check:", {
-        hasServiceKey: !!process.env.NUXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY,
-        hasUrl: !!process.env.NUXT_PUBLIC_SUPABASE_URL,
-        hasAnonKey: !!process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+    if (!config.supabase.serviceKey) {
+      console.error("Runtime config check:", {
+        hasServiceKey: !!config.supabase.serviceKey,
+        hasUrl: !!config.public.supabase.url,
         nodeEnv: process.env.NODE_ENV,
       });
       throw createError({
