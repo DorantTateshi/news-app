@@ -14,8 +14,8 @@ export default defineEventHandler(async (event) => {
 
     // Create Supabase client with service role key for admin operations
     const client = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY! // Server-only key for admin operations
+      process.env.NUXT_PUBLIC_SUPABASE_URL!,
+      process.env.NUXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY! // Server-only key for admin operations
     );
 
     // Verify the service role key is configured
